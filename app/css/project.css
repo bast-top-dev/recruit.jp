@@ -54,7 +54,7 @@
   padding-top: .8rem;
   font-weight: 700;
   font-size: .8rem;
-  font-family: "Comfortaa", sans-serif;
+  font-family: "Comfortaa", sans-serif !important;
 }
 
 
