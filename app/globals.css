@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@import "./css/foundation.css";
+@import "./css/project.css";
+@import "./css/object.css";
+@import "./css/style.css";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+body {
+  color: var(--colorBrown);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+  font-family: "Zen Maru Gothic","游ゴシック","Yu Gothic",YuGothic,"メイリオ","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","Lucida Grande","Osaka","Verdana","ＭＳ Ｐゴシック",sans-serif;
+  letter-spacing: .04em;
+  -webkit-font-feature-settings: "palt";
+  font-feature-settings: "palt";
+  -webkit-text-size-adjust: 100%;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #4f3b17;
+    --bgColorPink: #f7eeeb;
+  }
+}
