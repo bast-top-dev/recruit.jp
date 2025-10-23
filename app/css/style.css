@@ -351,7 +351,7 @@
   height: 100%;
   scale: 1.6;
   scale: 2;
-  background: url(../../public/img/p-icn_sakura.png);
+  background: url(/career/img/common/p-icn_sakura.png);
   background-size: contain;
   background-repeat: no-repeat;
   content: "";

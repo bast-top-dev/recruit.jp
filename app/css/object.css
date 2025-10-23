@@ -316,6 +316,62 @@
   }
 }
 
+.js-inview {
+  visibility: hidden;
+  -webkit-transform: translateY(-8rem);
+          transform: translateY(-8rem);
+  opacity: 0;
+  -webkit-transition: opacity 1s,visibility 1s,-webkit-transform 1s;
+  transition: opacity 1s,visibility 1s,-webkit-transform 1s;
+  transition: opacity 1s,visibility 1s,transform 1s;
+  transition: opacity 1s,visibility 1s,transform 1s,-webkit-transform 1s;
+}
+
+.js-inview.is-active {
+  visibility: visible;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}
+
+.js-bounce {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.js-bounce.is-active {
+  -webkit-animation: fadeInBounce .7s ease-out .1s forwards;
+          animation: fadeInBounce .7s ease-out .1s forwards;
+}
+
+.js-kv_ttl {
+  visibility: hidden;
+  -webkit-transform: translateY(-5rem);
+          transform: translateY(-5rem);
+  opacity: 0;
+  -webkit-transition: opacity 1s,visibility 1s,-webkit-transform 1s;
+  transition: opacity 1s,visibility 1s,-webkit-transform 1s;
+  transition: opacity 1s,visibility 1s,transform 1s;
+  transition: opacity 1s,visibility 1s,transform 1s,-webkit-transform 1s;
+}
+
+.js-kv_ttl.is-active {
+  visibility: visible;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}
+
+.js-kv_mask {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.js-kv_mask.is-active {
+  -webkit-animation: fadeInBounce .7s ease-out .1s forwards;
+          animation: fadeInBounce .7s ease-out .1s forwards;
+}
+
 .js-select {
   visibility: hidden;
   opacity: 0;
@@ -344,6 +400,30 @@
   transition: transform 500ms, -webkit-transform 500ms;
 }
 
+.js-accordion_anchor {
+  cursor: pointer;
+}
+
+.js-accordion.is-active svg {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.js-accordion_content_wrapper {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 500ms;
+  transition: height 500ms;
+}
+
+.js-accordion_content_wrapper.is-open {
+  -webkit-transition: height 0s;
+  transition: height 0s;
+}
+
+.js-movie.is-none {
+  pointer-events: none;
+}
 
 #hs-overlay-cta-169524314804 {
   display: none;

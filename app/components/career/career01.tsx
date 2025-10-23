@@ -12,7 +12,7 @@ import p_illust_teacher01 from '../../../public/img/p-illust_teacher01.svg'
 const Career01: React.FC = () => {
   return (
     <>
-      <section className="career01-top_cycle">
+      <section className="career01-top_cycle js-fix_header">
         <div className="career01-top_cycle_wrapper career01-container">
           <div className="career01-top_cycle_about">
             <div className="career01-top_cycle_about_wrapper">
