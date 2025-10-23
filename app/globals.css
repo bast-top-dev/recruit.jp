@@ -25,6 +25,13 @@ body {
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-inter: var(--font-inter);
+  --font-noto-sans-jp: var(--font-noto-sans-jp);
+}
+
+/* Utility class for Noto Sans JP font */
+.font-noto-sans-jp {
+  font-family: var(--font-noto-sans-jp), "Zen Maru Gothic","游ゴシック","Yu Gothic",YuGothic,"メイリオ","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","Lucida Grande","Osaka","Verdana","ＭＳ Ｐゴシック",sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
