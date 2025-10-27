@@ -45,7 +45,7 @@ const PointCard = ({
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <li className="relative w-full text-center lg:w-[28rem]">
+    <div className="relative w-full text-center lg:w-[28rem]">
       <PointBadge number={number} />
 
       <div className="relative z-[1] mb-[1.6rem] overflow-hidden rounded-[9rem] lg:rounded-[12rem] lg:mb-[1.2rem]">
@@ -106,7 +106,7 @@ const PointCard = ({
           </a>
         )}
       </div>
-    </li>
+    </div>
   );
 };
 
