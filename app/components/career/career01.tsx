@@ -45,11 +45,11 @@ const PointCard = ({
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <li className="relative w-full text-center lg:w-[28rem]">
+    <div className="relative w-full text-center lg:w-[28rem]">
       <PointBadge number={number} />
 
       <div className="relative z-[1] mb-[1.6rem] overflow-hidden rounded-[9rem] lg:rounded-[12rem] lg:mb-[1.2rem]">
-        <div className="absolute top-0 left-[10%] w-full h-full scale-[2] bg-contain bg-no-repeat z-[1] transition-transform duration-[2s] pointer-events-none" />
+        <div className="absolute top-0 left-[10%] w-full h-full scale-[2] bg-[url('/img/p-icn_sakura.png')] bg-contain bg-no-repeat z-[1] transition-transform duration-[2s] pointer-events-none" />
         <Image
           className="relative z-[2] w-full h-auto"
           src={image}
@@ -106,7 +106,7 @@ const PointCard = ({
           </a>
         )}
       </div>
-    </li>
+    </div>
   );
 };
 
@@ -184,9 +184,7 @@ const Career01 = () => {
               4つのポイント
             </h3>
 
-            <ul
-              className="relative lg:my-20 flex flex-col items-center gap-[5rem] md:grid md:grid-cols-4"
-            >
+            <ul className="relative lg:my-20 flex flex-col items-center gap-[5rem] md:grid md:grid-cols-4">
               {points.map((point, index) => (
                 <li
                   key={point.number}
@@ -195,14 +193,26 @@ const Career01 = () => {
         ${index % 2 === 1 ? 'md:translate-y-24' : 'md:-translate-y-2'}
       `}
                 >
-                  {/* Show the dotted line ONLY if it's not the last item (mobile only) */}
+                  {/* MOBILE - Vertical line */}
                   {index !== points.length - 1 && (
                     <img
                       src="/img/l-top_cycle_point_list_icn_sp.png"
-                      alt="timeline"
+                      alt="timeline-mobile"
                       className={`
-            absolute top-20 h-full object-contain md:hidden pointer-events-none
+            absolute top-20 h-full object-contain md:hidden pointer-events-none z-[-1]
             ${index % 2 === 0 ? 'right-[-2rem] scale-x-100' : 'left-[-2rem] scale-x-[-1]'}
+          `}
+                    />
+                  )}
+
+                  {/* MD & LG - Horizontal line */}
+                  {index !== points.length - 1 && (
+                    <img
+                      src="/img/l-top_cycle_point_list_icn_pc.png"  // <- SAME IMAGE FOR md & lg
+                      alt="timeline-desktop"
+                      className={`
+            hidden md:block absolute   -translate-y-1/2 w-[18rem] object-contain pointer-events-none z-[-1]
+            ${index % 2 === 0 ? 'right-[-20rem] scale-x-100 top-1/2' : 'left-[20rem] scale-x-[-1] top-32'}
           `}
                     />
                   )}
