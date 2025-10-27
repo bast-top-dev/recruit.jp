@@ -49,7 +49,7 @@ const PointCard = ({
       <PointBadge number={number} />
 
       <div className="relative z-[1] mb-[1.6rem] overflow-hidden rounded-[9rem] lg:rounded-[12rem] lg:mb-[1.2rem]">
-        <div className="absolute top-0 left-[10%] w-full h-full scale-[2] bg-[url('/img/p-icn_sakura.png')] bg-contain bg-no-repeat z-[1] transition-transform duration-[2s] pointer-events-none" />
+        <div className="absolute top-0 left-[10%] w-full h-full scale-[2] bg-contain bg-no-repeat z-[1] transition-transform duration-[2s] pointer-events-none" />
         <Image
           className="relative z-[2] w-full h-auto"
           src={image}
