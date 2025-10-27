@@ -1,23 +1,47 @@
 @import "tailwindcss";
-@import "./css/foundation.css";
-@import "./css/project.css";
-@import "./css/object.css";
-@import "./css/style.css";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --colorWhite: #fff;
+  --headerHeight: 12rem;
+  --colorGray: #CFCFCF;
+  --colorBrown: #4f3b17;
+  --colorOrange: #FDB67F;
+  --colorLightBrown: #958974;
+  --colorLightBrown02: #B9B1A2;
+  --colorPink: #edabaa;
+  --colorLightPink: #eacbca;
+  --bgColorPink: #f7eeeb;
+  --bgColorLightPink: #f9f6f4;
+  --bgColorBoldPink: #f4e4e4;
+  --bgPatternColorPink: #eacbca;
+  --bgColorYellow: #FAF4E3;
+  --bgColorLightYellow: #F8EEC3;
+  --bgColorLightYellow02: #FFFBEE;
+  --bgColorBlue: #D5E9E9;
+  --bgColorLightGray: #E5E5E5;
+  --bgColorLightGreen: #DEECC4;
+  --bgColorBoldGreen: #ACD260;
+  --bgColorBoldGreen02: #C6E18E;
+  --bgColorOrange: #F4D9C5;
+  --bgColorPurple: #E5DEEE;
+  --colorYellow: #E9D062;
+  --colorRosePink: #ef7191;
+  --colorSakuraPink: #f4b9cb;
+  --colorSakuraBoldPink: #e40a72;
+  --hoverColorPink: #fad1d1;
+  --weightRegular: 400;
+  --weightMedium: 500;
+  --weightSemiBold: 600;
+  --weightBold: 700;
+  --weightBlack: 900;
 }
-body {
-  color: var(--colorBrown);
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 1;
-  font-family: "Zen Maru Gothic","游ゴシック","Yu Gothic",YuGothic,"メイリオ","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","Lucida Grande","Osaka","Verdana","ＭＳ Ｐゴシック",sans-serif;
-  letter-spacing: .04em;
-  -webkit-font-feature-settings: "palt";
-  font-feature-settings: "palt";
-  -webkit-text-size-adjust: 100%;
+
+@media screen and (max-width: 47.9375em) {
+  :root {
+    --headerHeight: 7rem;
+  }
 }
 
 @theme inline {
@@ -26,18 +50,104 @@ body {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-inter: var(--font-inter);
-  --font-noto-sans-jp: var(--font-noto-sans-jp);
 }
 
-/* Utility class for Noto Sans JP font */
-.font-noto-sans-jp {
-  font-family: var(--font-noto-sans-jp), "Zen Maru Gothic","游ゴシック","Yu Gothic",YuGothic,"メイリオ","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","Lucida Grande","Osaka","Verdana","ＭＳ Ｐゴシック",sans-serif;
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    font-size: min(.732vw, 62.5%);
+  }
+
+  @media screen and (max-width: 47.9375em) {
+    html {
+      font-size: 2.66vw;
+    }
+  }
+
+  body {
+    @apply text-[var(--colorBrown)] font-normal text-[1.6rem] leading-none min-w-0;
+    font-family: "Zen Maru Gothic","游ゴシック","Yu Gothic",YuGothic,"メイリオ","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","Lucida Grande","Osaka","Verdana","ＭＳ Ｐゴシック",sans-serif;
+    letter-spacing: .04em;
+    -webkit-font-feature-settings: "palt";
+    font-feature-settings: "palt";
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media screen and (max-width: 47.9375em) {
+    body {
+      @apply text-[1.4rem];
+      letter-spacing: 0em;
+    }
+  }
+
+  main {
+    @apply overflow-hidden;
+  }
+
+  a {
+    @apply text-current no-underline transition-opacity duration-500;
+  }
+
+  @media (hover: hover) {
+    a:hover {
+      @apply opacity-60;
+    }
+  }
+
+  svg {
+    @apply w-full;
+  }
+
+  img {
+    @apply max-w-full;
+    -webkit-backface-visibility: hidden;
+  }
+
+  button {
+    @apply p-0 border-0 bg-transparent appearance-none text-[var(--colorBrown)];
+  }
+
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, input, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    @apply m-0 p-0 border-0 align-baseline;
+    font: inherit;
+    font-size: 100%;
+  }
+
+  sup {
+    @apply relative top-[-0.1em] text-[70%] align-top;
+  }
+
+  sub {
+    @apply relative text-[70%] align-bottom;
+  }
+
+  article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
+    @apply block;
+  }
+
+  ol, ul {
+    @apply list-none;
+  }
+
+  blockquote, q {
+    quotes: none;
+  }
+
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: "";
+  }
+
+  table {
+    @apply border-collapse border-spacing-0;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #4f3b17;
-    --bgColorPink: #f7eeeb;
   }
 }
